@@ -4,7 +4,7 @@ const bcrypt=require('bcryptjs')
 const jwt=require('jsonwebtoken')
 const dotEnv=require('dotenv')
 dotEnv.config()
-const secretkey=process.env.secretkey
+const secretkey=process.env.secretKey
 const CreateUser=async(req,res)=>{
     try{
      const {name, email,  password, isAdmin}=req.body
