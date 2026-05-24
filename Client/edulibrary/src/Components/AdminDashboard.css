@@ -1,0 +1,78 @@
+body, html {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Arial, sans-serif;
+}
+
+.dashboard-container {
+  display: flex;
+  gap: 2.5rem;
+  justify-content: center;
+  align-items: center;
+  padding: 60px 20px;
+  background-image: url("/admindash.webp");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  min-height: calc(100vh - 90px);
+  position: relative;
+}
+
+.dashboard-container::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(10, 25, 50, 0.38);
+  z-index: 0;
+}
+
+.dashboard-btn {
+  position: relative;
+  z-index: 1;
+  width: 220px;
+  height: 160px;
+  padding: 0;
+  font-size: 1.2rem;
+  font-weight: 600;
+  border-radius: 16px;
+  cursor: pointer;
+  color: #ffffff;
+  text-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
+
+  background: rgba(15, 40, 70, 0.72);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1.5px solid rgba(255, 255, 255, 0.3);
+  box-shadow:
+    0 8px 32px rgba(0, 0, 0, 0.35),
+    inset 0 1px 0 rgba(255, 255, 255, 0.15);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+
+  transition: background 0.25s ease, transform 0.2s ease,
+              border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.btn-icon {
+  font-size: 3rem;
+  opacity: 0.95;
+}
+
+.dashboard-btn:hover {
+  background: rgba(20, 90, 160, 0.82);
+  border-color: rgba(255, 255, 255, 0.55);
+  box-shadow:
+    0 14px 40px rgba(0, 0, 0, 0.4),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  transform: translateY(-5px);
+}
+
+.dashboard-btn:active {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}

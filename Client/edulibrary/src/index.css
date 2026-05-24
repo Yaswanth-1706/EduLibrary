@@ -1,0 +1,394 @@
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap');
+
+:root {
+  --brand: #6366f1;
+  --bg-main: #f1f5f9;
+  --bg-card: #ffffff;
+  --nav-bg: #1e293b;
+  --danger: #ef4444;
+  --border: #e2e8f0;
+  --text-main: #0f172a;
+  --text-light: #64748b;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Plus Jakarta Sans', sans-serif;
+}
+
+body {
+  background: var(--bg-main);
+}
+/*nav bar*/
+
+.navbar {
+  background: #0f2033;
+  padding: 1.4rem 2.5rem;        /* was 1rem */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  min-height: 90px;              /* was 70px */
+  box-shadow: 0 3px 20px rgba(0, 0, 0, 0.4);
+}
+
+.navbar-logo {
+  display: flex;
+  align-items: center;
+  gap: 16px;                     /* was 14px */
+  font-size: 1.85rem;            /* was 1.6rem */
+  font-weight: 800;
+  color: #ffffff;
+  letter-spacing: 0.01em;
+}
+
+.navbar-logo-icon {
+  width: 58px;
+  height: 58px;
+  background: linear-gradient(135deg, #3182ce, #1a56a0);  /* was orange */
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.8rem;
+  color: #ffffff;
+  flex-shrink: 0;
+  box-shadow: 0 3px 12px rgba(49, 130, 206, 0.45);         /* was orange glow */
+}
+.navbar-name {
+  color: rgba(255, 255, 255, 0.72);
+  font-size: 0.95rem;            /* was 0.92rem */
+  font-weight: 400;
+  margin: 0;
+}
+
+.logout-btn {
+  background: #e53e3e;
+  color: #ffffff;
+  padding: 11px 26px;            /* was 9px 22px */
+  border-radius: 9px;
+  font-size: 0.95rem;            /* was 0.9rem */
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: opacity 0.2s ease, transform 0.15s ease;
+  box-shadow: 0 2px 10px rgba(229, 62, 62, 0.4);
+}
+
+.logout-btn:hover {
+  opacity: 0.88;
+  transform: translateY(-1px);
+}
+
+.logout-btn:active {
+  transform: translateY(0px);
+  opacity: 1;
+}
+/* =========================================
+   SEARCH BAR
+========================================= */
+
+.search {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 30px 20px 10px;
+}
+
+.search input {
+  width: 100%;
+  max-width: 500px;
+  padding: 14px 18px;
+  border-radius: 12px;
+  border: 1px solid var(--border);
+  background: white;
+  outline: none;
+  font-size: 0.95rem;
+  transition: 0.2s;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+}
+
+.search input:focus {
+  border-color: var(--brand);
+  box-shadow: 0 0 0 4px rgba(99,102,241,0.12);
+}
+
+/* =========================================
+   ADD FILE FORM
+========================================= */
+
+.add-file-container {
+  min-height: calc(100vh - 70px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.upload-form {
+  background: white;
+  padding: 40px;
+  border-radius: 20px;
+  width: 100%;
+  max-width: 450px;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.08);
+  display: flex;
+  flex-direction: column;
+}
+
+.upload-form h2 {
+  margin-bottom: 20px;
+  color: #1e293b;
+  text-align: center;
+}
+
+.upload-form label {
+  display: block;
+  margin: 10px 0 5px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: #475569;
+}
+
+.upload-form input,
+.upload-form textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  margin-bottom: 15px;
+  background: #f8fafc;
+  outline: none;
+}
+
+.upload-form input:focus,
+.upload-form textarea:focus {
+  border-color: var(--brand);
+}
+
+.upload-form textarea {
+  height: 100px;
+  resize: none;
+}
+
+.submit-btn {
+  background: var(--brand);
+  color: white;
+  padding: 12px;
+  border: none;
+  border-radius: 8px;
+  font-weight: 700;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: 0.2s;
+}
+
+.submit-btn:hover {
+  opacity: 0.9;
+}
+
+/* =========================================
+   USERS / FILES CONTAINER
+========================================= */
+
+.users-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  column-gap: 35px;
+  row-gap: 35px;
+  padding: 40px;
+  max-width: 1500px;
+  margin: 0 auto;
+}
+
+/* =========================================
+   CARD
+========================================= */
+
+.card {
+  background: var(--bg-card);
+  border-radius: 18px;
+  padding: 22px;
+  border: 1px solid var(--border);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+  transition: 0.25s;
+  overflow: hidden;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+}
+
+.card h2 {
+  font-size: 1.2rem;
+  color: var(--text-main);
+  margin-bottom: 10px;
+  word-break: break-word;
+}
+
+.card p {
+  color: var(--text-light);
+  font-size: 0.92rem;
+  line-height: 1.5;
+  margin-bottom: 18px;
+  word-break: break-word;
+}
+
+/* =========================================
+   IMAGE
+========================================= */
+
+.profile-img {
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 14px;
+  border: 1px solid var(--border);
+}
+
+/* =========================================
+   PDF LINK
+========================================= */
+
+.filelink {
+  display: inline-block;
+  width: 100%;
+  text-align: center;
+  padding: 12px;
+  background: var(--brand);
+  color: white;
+  text-decoration: none;
+  border-radius: 10px;
+  font-weight: 700;
+  transition: 0.2s;
+}
+
+.filelink:hover {
+  opacity: 0.9;
+}
+
+/* =========================================
+   CARD BUTTON
+========================================= */
+
+.card button {
+  background: #fff;
+  color: var(--danger);
+  border: 1.5px solid #fee2e2;
+  padding: 10px 20px;
+  border-radius: 10px;
+  font-weight: 700;
+  cursor: pointer;
+  width: 100%;
+  margin-top: 16px;
+  transition: 0.2s;
+}
+
+.card button:hover {
+  background: #fef2f2;
+}
+
+/* =========================================
+   ADD FILES BUTTON
+========================================= */
+
+.add-files-btn {
+  background: var(--brand);
+  color: white;
+  padding: 12px 24px;
+  border-radius: 8px;
+  border: none;
+  font-weight: 700;
+  cursor: pointer;
+  margin: 20px 40px;
+  transition: 0.2s;
+}
+
+.add-files-btn:hover {
+  opacity: 0.9;
+}
+
+/* =========================================
+   FORM ERROR
+========================================= */
+
+.error-text {
+  color: #ef4444;
+  font-size: 0.8rem;
+  font-weight: 600;
+  margin-top: -10px;
+  margin-bottom: 15px;
+  text-align: left;
+}
+
+/* =========================================
+   FORM FOOTER
+========================================= */
+
+.form-footer {
+  margin-top: 20px;
+  text-align: center;
+  font-size: 0.9rem;
+}
+
+.link-text {
+  color: #6366f1;
+  cursor: pointer;
+  font-weight: 700;
+  text-decoration: underline;
+}
+
+/* =========================================
+   MOBILE RESPONSIVE
+========================================= */
+
+@media (max-width: 768px) {
+
+  .navbar {
+    padding: 14px 18px;
+  }
+
+  .navbar-logo {
+    font-size: 1.1rem;
+    gap: 0.8rem;
+  }
+
+  .navbar-name {
+    display: none;
+  }
+
+  .users-container {
+    grid-template-columns: 1fr;
+    padding: 20px;
+    gap: 24px;
+  }
+
+  .card {
+    padding: 18px;
+  }
+
+  .profile-img {
+    height: 220px;
+  }
+
+  .upload-form {
+    padding: 25px;
+  }
+
+  .search {
+    padding: 20px 15px 5px;
+  }
+
+  .search input {
+    font-size: 14px;
+  }
+
+  .add-files-btn {
+    margin: 20px;
+    width: calc(100% - 40px);
+  }
+}

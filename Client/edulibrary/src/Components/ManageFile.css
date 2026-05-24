@@ -1,0 +1,73 @@
+.files-page {
+  min-height: calc(100vh - 90px);
+  background-image: url("/admindash.webp");
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  position: relative;
+  padding: 36px 40px;
+}
+
+.files-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(10, 25, 50, 0.55);
+  z-index: 0;
+}
+
+.files-inner {
+  position: relative;
+  z-index: 1;
+}
+
+.files-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 28px;
+}
+
+.files-title {
+  color: #ffffff;
+  font-size: 2rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+}
+
+.files-title-icon {
+  font-size: 1.8rem;
+  opacity: 0.95;
+}
+
+.add-files-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: linear-gradient(135deg, #3182ce, #1a56a0);
+  color: #ffffff;
+  border: none;
+  padding: 11px 24px;
+  border-radius: 10px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(49, 130, 206, 0.45);
+  transition: opacity 0.2s ease, transform 0.15s ease;
+}
+
+.add-files-btn:hover {
+  opacity: 0.9;
+  transform: translateY(-2px);
+}
+
+.add-files-btn:active {
+  transform: translateY(0);
+}
+
+.add-icon {
+  font-size: 13px;
+}
