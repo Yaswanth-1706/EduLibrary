@@ -8,7 +8,7 @@ const UserDashboard = () => {
   const [search, setSearch] = useState("")
 
   useEffect(() => {
-    axios.get("http://localhost:2000/files/search?search=" + (search || "a"))
+    axios.get("https://edulibrary-lsfi.onrender.com/files/search?search=" + (search || "a"))
       .then(res => setData(res.data))
       .catch(err => console.log(err))
   }, [search])

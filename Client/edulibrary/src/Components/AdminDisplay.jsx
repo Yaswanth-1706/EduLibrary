@@ -7,7 +7,7 @@ const AdminDisplay = () => {
   
      useEffect(()=>{
 
-    axios.get("http://localhost:2000/files/getFile",{
+    axios.get("https://edulibrary-lsfi.onrender.com/files/getFile",{
       headers:{
         Authorization:`Bearer ${localStorage.getItem("token")}`
       }
@@ -22,7 +22,7 @@ const AdminDisplay = () => {
   },[data])
   const deletehandler=async(deleteItem)=>{
     try{
-        const del=await axios.delete(`http://localhost:2000/files/deleteFile/${deleteItem}`)
+        const del=await axios.delete(`https://edulibrary-lsfi.onrender.com/files/deleteFile/${deleteItem}`)
         alert("deleted successfully")
         console.log("delted succeessfully")
     }

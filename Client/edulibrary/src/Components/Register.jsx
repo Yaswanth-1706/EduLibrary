@@ -34,7 +34,7 @@ const Register = () => {
       if(data.password===cpassword)
       {
       const access=(data.isAdmin&&adminKey==="admin")?"admins/addAdmin":(!data.isAdmin)?"users/addUser": setError(true)
-      const responce=await axios.post(`http://localhost:2000/${access}`,data)
+      const responce=await axios.post(`https://edulibrary-lsfi.onrender.com/${access}`,data)
       console.log(responce.data)
       reset()
       console.log(adminKey)

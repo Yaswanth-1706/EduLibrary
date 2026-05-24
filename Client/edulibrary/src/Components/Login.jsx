@@ -24,7 +24,7 @@ const Login = () => {
     try{
 
       // const access=(usertype)?"admins/adminlogin":"users/userlogin"
-      const responce=await axios.post("http://localhost:2000/users/userlogin",data)
+      const responce=await axios.post("https://edulibrary-lsfi.onrender.com/users/userlogin",data)
       console.log(responce.data)
       const decoded=jwtDecode(responce.data.token)
       localStorage.setItem("token",responce.data.token)

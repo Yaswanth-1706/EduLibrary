@@ -9,7 +9,7 @@ const ManageUsers = () => {
   const admin = JSON.parse(localStorage.getItem("user") || "{}")
 
   useEffect(() => {
-    axios.get("http://localhost:2000/users/getUser", {
+    axios.get("https://edulibrary-lsfi.onrender.com/users/getUser", {
       headers: {
         Authorization: `Bearer ${localStorage.getItem("token")}`
       }
@@ -20,7 +20,7 @@ const ManageUsers = () => {
 
   const deleteHandler = async (id) => {
     try {
-      await axios.delete(`http://localhost:2000/users/deleteUser/${id}`)
+      await axios.delete(`https://edulibrary-lsfi.onrender.com/users/deleteUser/${id}`)
       setData(prev => prev.filter(u => u._id !== id))
     } catch (err) {
       console.log(err)

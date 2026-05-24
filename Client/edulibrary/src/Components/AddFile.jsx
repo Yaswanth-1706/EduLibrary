@@ -16,7 +16,7 @@ const AddFile = () => {
          try{
 
     const response = await axios.post(
-      "http://localhost:2000/files/addFile",
+      "https://edulibrary-lsfi.onrender.com/files/addFile",
       formData
     )
     alert("file uploded successfully")
