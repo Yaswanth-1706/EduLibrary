@@ -18,7 +18,7 @@ app.use(cors())
 app.use('/admins',adminroutes)
 app.use('/users',userroutes)
 app.use('/files',fileroutes)
-const PORT=2000
+const PORT= process.env.PORT || 2000
 app.listen(PORT,(err)=>{
     if(err)
     console.log("port connection error: ",err)
