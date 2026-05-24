@@ -1,7 +1,7 @@
 const jwt=require('jsonwebtoken')
 const dotEnv=require('dotenv')
 dotEnv.config()
-const secretkey=process.env.secretkey
+const secretkey=process.env.secretKey
 const VerifyToken=(req,res,next)=>{
 const header=req.headers.authorization
 if(!header)
