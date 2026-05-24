@@ -75,8 +75,11 @@ const userLogin=async(req,res)=>{
      res.status(200).json({token:token,role:userlogin.isAdmin})
 
     }catch(err){
-           console.log("server error")
-           res.status(500).json({message:"server side error"})
-    }
+   console.log("LOGIN ERROR:", err)
+
+   res.status(500).json({
+      message: err.message
+   })
+}
 }
 module.exports={CreateUser,getUser,deleteUser,userLogin}
