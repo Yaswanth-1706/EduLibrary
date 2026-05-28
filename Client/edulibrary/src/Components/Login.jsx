@@ -19,32 +19,52 @@ const Login = () => {
       )
      
     }
-    const submithandler=async(e)=>{
-      e.preventDefault();
-    try{
+    const submithandler = async (e) => {
 
-      // const access=(usertype)?"admins/adminlogin":"users/userlogin"
-      const responce=await axios.post("https://edulibrary-lsfi.onrender.com/users/userlogin",data)
-      console.log(responce.data)
-      const decoded=jwtDecode(responce.data.token)
-      localStorage.setItem("token",responce.data.token)
-      localStorage.setItem("user",JSON.stringify(decoded))
-      console.log("Login successful")
-      console.log(usertype)
-      console.log(decoded)
-      if(responce.data.role)
-      {
-        navigate('/admindashboard',{state:decoded})
-      }
-      else
-      {
-        navigate('/userdashboard',{state:decoded})
-      }
+  e.preventDefault();
+
+  try {
+
+    const response = await axios.post(
+      "https://edulibrary-lsfi.onrender.com/users/userlogin",
+      data
+    )
+
+    const decoded = jwtDecode(response.data.token)
+
+    localStorage.setItem("token", response.data.token)
+
+    localStorage.setItem(
+      "user",
+      JSON.stringify(decoded)
+    )
+
+    alert("Login successful")
+
+    if (response.data.role) {
+      navigate('/admindashboard', {
+        state: decoded
+      })
     }
-    catch(err){
-    console.log("Login error:", err)
+    else {
+      navigate('/userdashboard', {
+        state: decoded
+      })
+    }
+
   }
+  catch (err) {
+
+    console.log(err)
+
+    if (err.response) {
+      alert(err.response.data.message)
     }
+    else {
+      alert("Server error")
+    }
+  }
+}
     const [usertype,setUsertype]=useState(false)
   return (
     <div className='login-container' >
