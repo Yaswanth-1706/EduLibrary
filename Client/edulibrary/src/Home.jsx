@@ -46,18 +46,6 @@ const Home = () => {
           </button>
         </div>
 
-        <div className="hero-stats">
-          <div className="stat">
-            <div className="stat-num">500+</div>
-            <div className="stat-label">Ebooks</div>
-          </div>
-          <div className="stat-divider" />
-          <div className="stat">
-            <div className="stat-num">200+</div>
-            <div className="stat-label">Journals</div>
-          </div>
-        </div>
-
       </div>
     </div>
   )
